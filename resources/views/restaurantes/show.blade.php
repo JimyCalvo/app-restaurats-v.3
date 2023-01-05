@@ -3,22 +3,24 @@
 
 <x-layouts.app title="Inicio">
 
-<h1>{{ session('status') }}</h1>
+<h5>{{ session('status') }}</h5>
 
-<h1>{{$restaurante->razon_social}}</h1>
+<h6>{{$restaurante->razon_social}}</h6>
 
-<h1>{{$restaurante->nombre_restaurante}}</h1>
+<h6>{{$restaurante->nombre_restaurante}}</h6>
 
-<img src="{{asset($restaurante->fotoDirec)}}" alt="    {{$restaurante->nombre_restaurante}}"   width="120 px">
+<img src="{{asset($restaurante->fotoDirec)}}" alt="    {{$restaurante->nombre_restaurante}}"   width="300 px">
 
-<h3>
+<h6>
     {{$restaurante->direccion_local}}
+    <br>
     {{$restaurante->gerente_local}}
-
+    <br>
     {{$restaurante->tipo_local}}
+    <br>
     {{$restaurante->correo_local}}
-</h3>
+</h6>
 
-<a href="{{route('restaurantes.index')}}"><h1>Regresar</h1></a>
+<a href="{{route('restaurantes.index')}}"><h5>Regresar</h5></a>
 
 </x-layouts.app>

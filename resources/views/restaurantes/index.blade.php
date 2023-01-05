@@ -19,20 +19,20 @@
             </form>
         </div>
 
-  
+            <br>
+            <br>
         @foreach ($restaurantes as $restaurante)
-        <div style="display:flex; aling-items: baseline">
-            <h2>
+        <div style="display:flex; aling-items: baseline" class="contanier me-5 ms-5 pe-5 ps-5">
+            <img src="{{asset($restaurante->fotoDirec)}}" alt="    {{$restaurante->nombre_restaurante}}"   width="120 px">
+            <p>
                 <a href="{{ route('restaurantes.show', $restaurante) }}">
                     {{ $restaurante->nombre_restaurante }}  
                 </a>
-            </h2> &nbsp;
-            <img src="{{asset($restaurante->fotoDirec)}}" alt="    {{$restaurante->nombre_restaurante}}"   width="120 px">
-
-
+            </p> &nbsp;
+        
             &nbsp;
 
-            <a href="{{route('restaurantes.edit', $restaurante)}}">Editar</a>
+            <a class="btn btn-link" href="{{route('restaurantes.edit', $restaurante)}}">Editar</a>
 
             &nbsp;
 
@@ -40,7 +40,7 @@
                 @csrf
             @method('DELETE')
 
-            <button type="submit">ELIMINAR</button>
+            <button type="submit" class="btn btn btn-danger" >Eliminar</button>
             </form>
         </div>
         @endforeach
